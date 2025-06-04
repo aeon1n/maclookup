@@ -19,11 +19,11 @@ input.addEventListener("input", (e) => {
     clearTimeout(timer);
     timer = setTimeout(() => __awaiter(void 0, void 0, void 0, function* () {
         const macRegex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
-        if (macRegex.test(i.value)) {
+        if (macRegex.test(i.value.trim())) {
             errorIcon.classList.add("hidden");
             successIcon.classList.remove("hidden");
             try {
-                let res = yield requestMac(i.value);
+                let res = yield requestMac(i.value.trim());
                 ul.innerHTML = `<li><strong>MacPrefix:</strong> ${res.macPrefix}</li>
         <li><strong>VendorName:</strong> ${res.vendorName}</li>
         <li><strong>Private:</strong> ${res.private}</li>

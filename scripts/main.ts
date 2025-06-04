@@ -23,12 +23,12 @@ input.addEventListener("input", (e) => {
 
   timer = setTimeout(async () => {
     const macRegex = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
-    if (macRegex.test(i.value)) {
+    if (macRegex.test(i.value.trim())) {
       errorIcon.classList.add("hidden");
       successIcon.classList.remove("hidden");
 
       try {
-        let res: MacVendor = await requestMac(i.value);
+        let res: MacVendor = await requestMac(i.value.trim());
 
         ul.innerHTML = `<li><strong>MacPrefix:</strong> ${res.macPrefix}</li>
         <li><strong>VendorName:</strong> ${res.vendorName}</li>
