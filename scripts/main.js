@@ -28,7 +28,7 @@ input.addEventListener("input", (e) => {
         <li><strong>VendorName:</strong> ${res.vendorName}</li>
         <li><strong>Private:</strong> ${res.private}</li>
         <li><strong>BlockType:</strong> ${res.blockType}</li>
-        <li><strong>LastUpdated:</strong> ${res.lastUpdated}</li>`;
+        <li><strong>LastUpdated:</strong> ${res.lastUpdate}</li>`;
             }
             catch (err) {
                 console.log(err);
@@ -56,7 +56,7 @@ function requestMac(address) {
             vendorName: data.vendorName,
             private: data.private,
             blockType: data.blockType,
-            lastUpdated: data.lastUpdated,
+            lastUpdate: data.lastUpdate,
         };
     });
 }
